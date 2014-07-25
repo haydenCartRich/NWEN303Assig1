@@ -3,6 +3,14 @@ package ass1;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * One benefit of the sequential merge sort algorithm is that it is faster than the concurrent implementations on
+ * small data sizes. I learned that we should switch to the sequential sort in the parallel sorts when the size of the list
+ * is less than 20. This is because on a small list, each thread would only have to process a small amount of
+ * data, making the overhead of creating a thread counter productive.
+ * Another advantage of the sequential implementation is that the code is smaller and simpler, and thus easier
+ * to understand and modify by people reading the code.
+ */
 public class MSequentialSorter implements Sorter {
 
 	@Override

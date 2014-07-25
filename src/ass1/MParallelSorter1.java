@@ -8,6 +8,14 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
+/**
+ * By implementing merge sort using a cachedThreadPool I learned how to submit Callable tasks to a pool
+ * and how to use the the Future type to get the result from a task when it is available (when the future is now).
+ * Using a cachedThreadPool is advantageous over the sequential implementation of merge sort as it is able to
+ * process the different branches of the algorithm at the same time (concurrently). The use of a ExecutorService
+ * CachedThreadPool as opposed to just making a new thread means that the library can do all the 'hard stuff' for
+ * so you don't create errors yourself. ...
+ */
 public class MParallelSorter1 implements Sorter {
 
 	ExecutorService pool = Executors.newCachedThreadPool();

@@ -5,6 +5,9 @@ import java.util.List;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveTask;
 
+/**
+ *For joins are good as when a process is done, it can give its resources to another thread.
+ * */
 public class MParallelSorter2 implements Sorter {
 
 	static final ForkJoinPool mainPool = new ForkJoinPool();
