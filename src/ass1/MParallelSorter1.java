@@ -14,7 +14,8 @@ import java.util.concurrent.Future;
  * Using a cachedThreadPool is advantageous over the sequential implementation of merge sort as it is able to
  * process the different branches of the algorithm at the same time (concurrently). The use of a ExecutorService
  * CachedThreadPool as opposed to just making a new thread means that the library can do all the 'hard stuff' for
- * so you don't create errors yourself. ...
+ * so you don't create errors yourself by poor concurrent programming making threads. The only thing to check for
+ * is that Future.get() actually gives you a value.
  */
 public class MParallelSorter1 implements Sorter {
 

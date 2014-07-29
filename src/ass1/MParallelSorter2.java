@@ -2,11 +2,17 @@ package ass1;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveTask;
 
 /**
- *For joins are good as when a process is done, it can give its resources to another thread.
+ * I learned that ForkJoinPools are designed for divide and conquer recursive problems like our Merge sort algorithm.
+ * Our merge sort algorithm is symmetrical as it divides the problem in two, however during runtime the threads
+ * can take more or less time for one branch than the other side. The ForkJoinPool helps the slower branch to catch
+ * up by releasing resources from the completed threads and giving them to threads that need them. The ForkJoinPool
+ * also seems safer as it doesn't require us to use futures, so there is no need to try Future.get() and do something
+ * when catching InterruptedExceptions or ExecutionExceptions.
  * */
 public class MParallelSorter2 implements Sorter {
 
